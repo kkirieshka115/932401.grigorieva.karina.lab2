@@ -1,49 +1,47 @@
 :root {
-    --bg-main: #e6f3ff;
-    --bg-card: #ffffff;
-    --text-color: #1a3a5c;
+    --main-color: #e6f3ff;
     --accent-color: #1a3a5c;
-    --accent-light: #4da6ff;
-    --border-color: #b3d9ff;
-    --font-family: Arial, sans-serif;
+    --text-color: #1a3a5c;
+    --font-main: Arial, sans-serif;
 }
 
 body {
-    font-family: var(--font-family);
-    background-color: var(--bg-main);
+    font-family: var(--font-main);
+    background-color: var(--main-color);
     color: var(--text-color);
     margin: 20px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Позиционирование: static */
-header.static-element, main, section, aside, footer {
+/* position: static */
+header, main, section, aside, footer {
     position: static;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background-color: #ffffff;
+    border: 1px solid #b3d9ff;
     padding: 15px;
     margin-bottom: 15px;
 }
 
-header.static-element {
+header {
     background-color: var(--accent-color);
-    color: var(--bg-main);
+    color: var(--main-color);
 }
 
-header.static-element h1 {
-    color: var(--bg-main);
+header h1 {
+    color: var(--main-color);
 }
 
-header.static-element p {
+header p {
     color: #b3d9ff;
 }
 
 img {
-    border: 2px solid var(--accent-light);
-    object-fit: cover;
+    border: 2px solid #4da6ff;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
-/* Ссылки: :visited, :hover */
 a {
     color: var(--accent-color);
 }
@@ -53,18 +51,15 @@ a:visited {
 }
 
 a:hover {
-    color: var(--accent-light);
-    text-decoration: underline;
+    color: #4da6ff;
 }
 
-/* Кнопка: :hover, :active */
 button {
     background-color: var(--accent-color);
     color: #ffffff;
     border: none;
     padding: 8px 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -72,103 +67,79 @@ button:hover {
 }
 
 button:active {
-    transform: translateY(1px);
+    opacity: 0.7;
 }
 
-/* Форма: :focus */
-input[type="text"], input[type="email"], textarea {
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
     max-width: 400px;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid var(--border-color);
-    background-color: #ffffff;
+    border: 1px solid #b3d9ff;
+    margin-bottom: 10px;
 }
 
-#name:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(26, 58, 92, 0.3);
-}
-
-input[type="email"]:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: 2px solid var(--accent-color);
 }
 
-/* Карточки: relative и absolute */
-.card {
+/* position: relative */
+.project-card {
     position: relative;
-    max-width: 550px;
-    height: 60px;
+    background-color: #ffffff;
+    border: 1px solid #b3d9ff;
+    padding: 12px 12px 12px 30px;
     margin-bottom: 10px;
     list-style-position: inside;
 }
 
-.card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: box-shadow 0.3s ease, opacity 0.2s ease;
-}
-
-.card-front, .card-back {
+/* position: absolute */
+.card-label {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--border-color);
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    box-sizing: border-box;
-}
-
-.card-back {
-    opacity: 0;
+    top: 8px;
+    right: 10px;
     background-color: var(--accent-color);
-    color: #ffffff;
-    transition: opacity 0.3s ease;
+    color: var(--main-color);
+    padding: 2px 8px;
+    font-size: 12px;
 }
 
-/* Эффекты карточек: :hover (свечение), :active (прозрачность) */
-.card:hover .card-inner {
-    box-shadow: inset 0 0 15px rgba(77, 166, 255, 0.7);
+.project-card strong {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.card:hover .card-back {
-    opacity: 1;
+.project-card p {
+    margin: 0;
 }
 
-.card:active .card-inner {
+/* :hover — свечение изнутри */
+.project-card:hover {
+    box-shadow: inset 0 0 12px rgba(77, 166, 255, 0.6);
+}
+
+/* :active — прозрачность */
+.project-card:active {
     opacity: 0.6;
 }
 
-/* Aside: эффект матового стекла */
+/* backdrop-filter: blur */
 aside {
-    background-color: rgba(26, 58, 92, 0.75);
+    background-color: rgba(26, 58, 92, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    color: var(--bg-main);
-    border: 1px solid var(--accent-light);
+    color: var(--main-color);
+    border: 1px solid #4da6ff;
 }
 
 aside h3 {
-    color: var(--accent-light);
+    color: #4da6ff;
     margin-top: 0;
-}
-
-aside a {
-    color: #b3d9ff;
-}
-
-aside a:visited {
-    color: #c9a8e8;
 }
 
 footer {
     text-align: center;
-    padding: 15px;
-    color: var(--accent-color);
 }
