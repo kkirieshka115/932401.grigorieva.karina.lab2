@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О себе | Григорьева Карина (ЛР №2)</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        h1, h2, h3 {
+            color: #1a3a5c;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="static-element">
+        <h1>Григорьева Карина</h1>
+        <p>Персональная страница: Учёный и исследователь</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>О себе</h2>
+            <img src="assets/images/photo.jpg" alt="Фото Григорьевой Карины" width="150" style="max-width: 100%;">
+            <p>Студентка группы 932401. Увлекаюсь астрономией и изучением Вселенной.</p>
+        </section>
+
+        <section>
+            <h2>Навыки</h2>
+            <ul>
+                <li>Работа с данными и статистический анализ</li>
+                <li>Проведение научных экспериментов и наблюдений</li>
+                <li>Написание научных статей</li>
+                <li>Анализ астрономических данных</li>
+                <li>Работа с телескопами и наблюдательным оборудованием</li>
+                <li>Научная коммуникация</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Проекты</h2>
+            <ol class="projects-list">
+                <li class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <strong>Исследование экзопланет в зоне обитаемости</strong>
+                        </div>
+                        <div class="card-back">
+                            Анализ данных с космического телескопа для поиска планет, пригодных для жизни.
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <strong>Наблюдение за звёздными скоплениями</strong>
+                        </div>
+                        <div class="card-back">
+                            Определение возраста и эволюции шаровых скоплений Млечного Пути.
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <strong>Анализ космического излучения</strong>
+                        </div>
+                        <div class="card-back">
+                            Изучение влияния солнечной активности на космические лучи.
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Обратная связь</h2>
+            <form id="feedbackForm" action="#" method="post" style="opacity: 0.9;">
+                <p>
+                    <label for="name">Имя:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                </p>
+                <p>
+                    <label for="message">Сообщение:</label><br>
+                    <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение..." required></textarea>
+                </p>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+
+        <aside>
+            <h3>Область науки</h3>
+            <p><strong>Астрономия</strong></p>
+            <p>Меня вдохновляет изучение Вселенной, тайны чёрных дыр и поиск ответов на вопросы о происхождении космоса.</p>
+            <p><a href="https://ru.wikipedia.org/wiki/Астрономия" target="_blank">Подробнее об астрономии</a></p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Григорьева Карина</p>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Имя:', document.getElementById('name').value);
+            console.log('Email:', document.getElementById('email').value);
+            console.log('Сообщение:', document.getElementById('message').value);
+            alert('Отправлено! Данные выведены в консоль.');
+        });
+    </script>
+</body>
+</html>
