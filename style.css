@@ -8,7 +8,8 @@
 
 body {
     font-family: var(--font-main);
-    background-color: var(--main-color);
+    background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 50%, #cce5ff 100%);
+    background-attachment: fixed;
     color: var(--text-color);
     margin: 20px;
     line-height: 1.6;
@@ -20,6 +21,12 @@ header, main, section, aside, footer {
     border: 1px solid var(--border-color);
     padding: 15px;
     margin-bottom: 15px;
+}
+
+main {
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
 
 header {
@@ -74,6 +81,12 @@ button:hover {
 
 button:active {
     opacity: 0.7;
+}
+
+button:focus {
+    outline: 3px solid #4da6ff;
+    outline-offset: 2px;
+    box-shadow: 0 0 8px rgba(77, 166, 255, 0.6);
 }
 
 input[type="text"],
@@ -134,7 +147,7 @@ textarea:focus {
 }
 
 aside {
-    background-color: rgba(26, 58, 92, 0.8);
+    background-color: rgba(26, 58, 92, 0.45);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: var(--main-color);
@@ -148,6 +161,18 @@ aside h3 {
 
 aside p {
     margin-bottom: 10px;
+}
+
+aside a {
+    color: #b3d9ff;
+}
+
+aside a:visited {
+    color: #c9a8e8;
+}
+
+aside a:hover {
+    color: #ffffff;
 }
 
 footer {
